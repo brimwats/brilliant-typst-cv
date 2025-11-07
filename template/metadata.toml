@@ -1,4 +1,5 @@
-#:schema https://raw.githubusercontent.com/yunanwg/brilliant-CV/main/metadata.toml.schema.json
+#:schema https://raw.githubusercontent.com/brimwats/brilliant-typst-cv/metadata.toml.schema.json
+
 
 # Set the output language
 # INFO: value must matches folder suffix; i.e "zh" -> "./modules_zh"
@@ -22,7 +23,13 @@ language = "en"
 
     [layout.fonts]
         regular_fonts = ["Source Sans Pro", "Source Sans 3"]
-        header_font = "Roboto"
+        regular_fonts = "TheSansOffice"
+        header_font = "TheSerifOffice"
+        header_font = "TheAntiquaSunOT"
+        section_font = "TheSerifOffice-Plain"
+        subsection_font = "TheMixOffice-Plain"
+        body_font = "TheSansOffice"
+
 
     [layout.header]
         # Optional values: left, center, right

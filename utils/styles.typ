@@ -7,8 +7,11 @@
   "Font Awesome 6 Brands",
   "Font Awesome 6 Free",
 )
+#let latinHeaderFont = ("TheAntiquaSunOT")
 
-#let latinHeaderFont = ("Roboto")
+#let latinSectionFont = ("TheSerifOffice-Plain")
+#let latinSubSectionFont = ("TheMixOffice-Plain")
+#let latinBodyFont = ("TheSansOffice")
 
 #let awesomeColors = (
   skyblue: rgb("#0395DE"),
@@ -40,13 +43,27 @@
 /// - latinFontList (array): the default list of latin fonts
 /// - latinHeaderFont (string): the default header font
 /// -> array
-#let overwriteFonts(metadata, latinFontList, latinHeaderFont) = {
+#let overwriteFonts(metadata, latinFontList, latinHeaderFont, latinSectionFont, latinSubSectionFont, latinBodyFont) = {
   let metadataFonts = metadata.layout.at("fonts", default: [])
   let regularFonts = latinFontList
   let headerFont = latinHeaderFont
+  let sectionFont = latinSectionFont
+  let subSectionFont = latinSubSectionFont
+  let bodyFont = latinBodyFont
+  
   if metadataFonts.len() > 0 {
-    regularFonts = metadataFonts.at("regular_fonts")
-    headerFont = metadataFonts.at("header_font")
+    regularFonts = metadataFonts.at("regular_fonts", default: latinFontList)
+    headerFont = metadataFonts.at("header_font", default: latinHeaderFont)
+    sectionFont = metadataFonts.at("section_font", default: latinSectionFont)
+    subSectionFont = metadataFonts.at("subsection_font", default: latinSubSectionFont)
+    bodyFont = metadataFonts.at("body_font", default: latinBodyFont)
   }
-  return (regularFonts: regularFonts, headerFont: headerFont)
+  
+  return (
+    regularFonts: regularFonts, 
+    headerFont: headerFont,
+    sectionFont: sectionFont,
+    subSectionFont: subSectionFont,
+    bodyFont: bodyFont
+  )
 }

@@ -52,6 +52,15 @@
             },
             "header_font": {
               "type": "string"
+            },
+            "section_font": {
+              "type": "string"
+            },
+            "subsection_font": {
+              "type": "string"
+            },
+            "body_font": {
+              "type": "string"
             }
           }
         },
