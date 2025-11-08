@@ -1,5 +1,4 @@
-#:schema https://raw.githubusercontent.com/brimwats/brilliant-typst-cv/metadata.toml.schema.json
-
+#:schema https://raw.githubusercontent.com/yunanwg/brilliant-CV/main/metadata.toml.schema.json
 
 # Set the output language
 # INFO: value must matches folder suffix; i.e "zh" -> "./modules_zh"
@@ -16,20 +15,17 @@ language = "en"
     before_entry_description_skip = "1pt"
 
     # Optional: sets paper size and margins. Possible values: a4 (default), us-letter
-    paper_size = "a4"
+    paper_size = "us-letter"
 
     # Optional: sets the width of the right column of a cvEntry. If not set, values known to work well are used
     #date_width = "3.6cm"
 
     [layout.fonts]
-        regular_fonts = ["Source Sans Pro", "Source Sans 3"]
-        regular_fonts = "TheSansOffice"
-        header_font = "TheSerifOffice"
+        regular_fonts = ["TheSansOffice", "Source Sans 3"]
         header_font = "TheAntiquaSunOT"
         section_font = "TheSerifOffice-Plain"
         subsection_font = "TheMixOffice-Plain"
         body_font = "TheSansOffice"
-
 
     [layout.header]
         # Optional values: left, center, right
